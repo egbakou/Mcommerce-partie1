@@ -45,6 +45,22 @@ public class ProductController {
     	
     	return produitsAvecMarges;
     }
+    
+    
+    
+    /*
+     * Partie 2 - Tri par ordre alphabétique
+     * 
+     * l'URI de la requête n'est pas mentionné dans l'activité,
+     * j'ai donc choisi moi-même /AdminProduitsTries pour accéder aux produits triés.
+     */
+    @GetMapping(value = "/AdminProduitsTries")
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+    	List<Product> listeProduitsTries = productDao.findAllByOrderByNom();
+    	
+    	return listeProduitsTries;
+    }
+    
 
 
     //Récupérer la liste des produits
